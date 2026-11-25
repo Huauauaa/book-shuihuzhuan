@@ -14,8 +14,9 @@ description: "Knowledge base from \"水浒传\" (Water Margin) by 施耐庵. Use
 - **带主题** — 问「投名状」「里应外合」「招安」「风险切割」等，我会定位并读取相关章节
 - **带回数** — 问 `ch16`，加载该回的完整摘要与 worked example
 - **浏览** — 问「你有哪些章节」查看下方索引
+- **逐字核对** — 涉及精确计数、原文措辞、人物出身等章节摘要未收录的细节时，grep 下方 `corpus.txt`，不要凭记忆作答
 
-核心框架未覆盖的主题，我会先读对应章节文件再回答。
+核心框架未覆盖的主题，我会先读对应章节文件再回答；摘要无法回答的细节再查 `corpus.txt`。
 
 ---
 
@@ -220,7 +221,9 @@ description: "Knowledge base from \"水浒传\" (Water Margin) by 施耐庵. Use
 - [glossary.md](glossary.md) — 全书关键术语与定义
 - [patterns.md](patterns.md) — 可迁移的技法与模式（含使用时机与代价）
 - [cheatsheet.md](cheatsheet.md) — 决策规则、权衡矩阵与识别信号
-- 全文：本次转换的临时提取文本已按流程清理；如需逐字核对原文，请用 `book-to-skill` 对 `/Users/harvey/Downloads/水浒传.epub` 重新提取，或直接查原书。
+- [corpus.txt](corpus.txt) — 全书纯文本（约 93 万字符 / 34,968 行，2.7 MB），随技能自带，用于逐字核对与 grep 检索；章节摘要未收录的细节（精确计数、出身、原话）查此文件，无需重新提取。
+
+检索提示：正文前 100 余行为目录，标题形如 `第一回 …` 重复出现两次（目录 + 正文）；用行号区间或 `grep -n` 定位，勿只读首个匹配。原书 61 张插图未被提取，文本中不含图像信息。
 
 ---
 
